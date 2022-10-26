@@ -9,7 +9,17 @@ module.exports = {
       2,
       // 什么情况下进行验证
       "always",
-      ["upd", "feat", "fix", "refactor", "docs", "chore", "style", "revert"],
+      [
+        "upd",
+        "feat",
+        "fix",
+        "test",
+        "refactor",
+        "docs",
+        "chore",
+        "style",
+        "revert",
+      ],
     ],
     "type-case": [0],
     "type-empty": [0],

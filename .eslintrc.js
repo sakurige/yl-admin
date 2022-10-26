@@ -5,5 +5,4 @@ module.exports = {
     quotes: ["error", "double"],
     "no-unused-vars": "warn",
   },
-  overrides: [],
 };
