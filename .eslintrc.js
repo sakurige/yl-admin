@@ -1,8 +1,8 @@
 module.exports = {
   extends: ["react-app"],
   rules: {
-    semi: ["error", "always"],
-    quotes: ["error", "double"],
+    semi: ["warn", "always"],
+    quotes: ["warn", "double"],
     "no-unused-vars": "warn",
   },
 };
