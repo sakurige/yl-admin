@@ -1,12 +1,8 @@
-import {
-  decrement,
-  increment,
-  selectCount,
-} from "../../store/reducer/mainReducer";
+import { decrement, increment, selectCount } from "store/reducer/mainReducer";
 import { Button } from "antd";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import React from "react";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 
 const HomeWrap = styled.div`
   color: #fff;
@@ -21,11 +17,11 @@ const Counter = styled.div`
 //   background-color: pink;
 // `;
 const Home = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   return (
     <HomeWrap>
       <h1>Home Page</h1>
-      <Counter>{useAppSelector(selectCount)}</Counter>
+      <Counter>{useSelector(selectCount)}</Counter>
       <Button onClick={() => dispatch(decrement())}>-</Button>
       <Button onClick={() => dispatch(increment())}>+</Button>
     </HomeWrap>

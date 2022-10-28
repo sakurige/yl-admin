@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useRoutes } from "react-router-dom";
 import routes from "./router";
 import styled from "styled-components";
+import { login } from "./service";
 
 const Title = styled.h1`
   background-color: #ccc;
@@ -22,11 +23,17 @@ const Button = styled.span`
   line-height: 40px;
   height: 40px;
 `;
+const fn = () => {
+  login().then((res) => {
+    console.log(res);
+  });
+};
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Title>Hello react</Title>
+      <button onClick={fn}>发送请求</button>
       <Wrap>{useRoutes(routes)}</Wrap>
       <Link to="/home">
         <Button>Home</Button>
@@ -36,6 +43,6 @@ function App() {
       </Link>
     </div>
   );
-}
+};
 
 export default App;
