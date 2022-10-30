@@ -24,4 +24,18 @@ class Request {
   }
 }
 
-export default new Request(config);
+const request = new Request(config);
+// 添加拦截器
+request.instance.interceptors.response.use(
+  (res) => {
+    return { ...res, data: res.data.data };
+  },
+  (error) => {
+    // 这里是为了处理 Login中submit 展示info时出现的一些错误
+    error.data = {
+      code: 402,
+    };
+    return error;
+  },
+);
+export default request;

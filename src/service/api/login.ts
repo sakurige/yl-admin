@@ -1,12 +1,14 @@
 import request from "../request";
 
-const login = async () => {
+interface UserInfo {
+  username: string;
+  password: string;
+}
+
+const login = async (userinfo: UserInfo) => {
   return await request.post({
     url: "admin/login",
-    data: {
-      username: "admin",
-      password: "admin",
-    },
+    data: userinfo,
   });
 };
 export default login;
