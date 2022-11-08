@@ -14,13 +14,11 @@ const root = ReactDOM.createRoot(
   document.querySelector("#root") as HTMLElement,
 );
 root.render(
-  <React.StrictMode>
-    <Suspense fallback={<Loading />}>
-      <BrowserRouter>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </BrowserRouter>
-    </Suspense>
-  </React.StrictMode>,
+  <Suspense fallback={<Loading />}>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </Suspense>,
 );
